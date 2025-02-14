@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSONL Viewer</title>
+    <link rel="stylesheet" href="jsonl_styles.css">
+</head>
+<body>
+    <header>
+        <h1>📁 JSONL Data Viewer</h1>
+        <div class="header-controls">
+            <div class="instructions">
+                <details>
+                    <summary>User Guide</summary>
+                    <ul>
+                        <li>Drag & drop JSONL files anywhere on the page</li>
+                        <li>Last 5 files stored in history</li>
+                        <li>Click column buttons to change layout</li>
+                    </ul>
+                </details>
+            </div>
+            <aside class="history-panel">
+                <h3>📚 Recent Files</h3>
+                <ul id="historyList"></ul>
+            </aside>
+        </div>
+    </header>
+    <div class="drop-zone" id="dropZone">
+        <div class="drop-content">
+            📁 Drag & Drop JSONL File Here
+            <div class="subtext">(or click to select)</div>
+        </div>
+    </div>
+    <input type="file" id="fileInput" hidden accept=".jsonl">
+    <div class="layout-controls">
+        <button class="layout-btn" data-cols="1">1 Column</button>
+        <button class="layout-btn" data-cols="3">3 Columns</button>
+        <button class="layout-btn" data-cols="5">5 Columns</button>
+    </div>
+    <div id="results"></div>
+    <script src="jsonl_loader.js"></script>
+</body>
+</html>
